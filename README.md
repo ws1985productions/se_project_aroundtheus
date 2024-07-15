@@ -6,3 +6,7 @@ In this 3rd project, I will be using Figma designs to help understand and create
 
 Link for the page on github
 https://ws1985productions.github.io/se_project_aroundtheus/
+
+Video Description
+
+https://drive.google.com/file/d/1Adi77mOXVvpUKJlCyx3Kdi9coYpbAFm5/view?usp=drive_link
