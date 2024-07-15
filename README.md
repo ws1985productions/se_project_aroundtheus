@@ -2,20 +2,4 @@
 
 ### Overview  
 
-* Intro  
-* Figma  
-* Images  
-  
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?node-id=0%3A1)  
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+In this 3rd project, I will be using Figma designs to help understand and create this Instrgram like website. I will also being include the use of a new apsect of CSS called media queries, media queries allow for the site to be rendered on different screen sizes to allow for the perfect looking site on all types of devices. I also decided to use the flex layout versus using grind for a smoother flow to the columns and rows that make up the site. I will be including a link for the page once deployed, and a seprate link for a video description.
