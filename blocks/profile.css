@@ -28,12 +28,12 @@
 }
 
 .profile__add-button{
-  background: transparent url(../images/Add-Button.svg) center no-repeat;
+  background: transparent url(../images/plus-sign.svg) center no-repeat;
   width: 150px;
   height: 50px;
   margin-left: auto;
   border: 2px;
-  border-style: none;
+  border-style: solid;
   border-color: #fff;
   cursor: pointer;
   padding: 0;
