@@ -1,82 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user_scalabe=no, maximum-scalable=no" />
-  <meta content="ie=edge" http-equiv="X-UA-Compatible" />
-  <title>Around The U.S</title>
-  <link href="./pages/index.css" rel="stylesheet" />
-</head>
-<body class="page">
-  <div class="page__content">
-    <header class="header page__section">
-      <img src="./images/logo.svg" alt="Around the U.S. Logo" class="header__logo" />
-    </header>
-    <main class="content">
-      <section class="profile page__section">
-        <img src="./images/jacques-cousteau.jpg" alt="Avatar" class="profile__image" />
-        <div class="profile__info">
-          <h1 class="profile__title"> Jacques Cousteau</h1>
-          <button class="profile__edit-button"></button>
-          <p class="profile__description">Explorer</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <title>Around the U.S.</title>
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+  </head>
+  <body class="page">
+    <div class="page__content">
+      <header class="header page__section">
+        <img
+          src="./images/Logo.svg"
+          alt="Around the U.S. Logo"
+          class="header__logo"
+        />
+      </header>
+      <main class="content">
+        <section class="profile page__section">
+          <img
+            src="./images/Avatar.png"
+            alt="Profile Image"
+            class="profile__image"
+          />
+          <div class="profile__info">
+            <h1 class="profile__name">Jacques Cousteau</h1>
+            <button
+              type="button"
+              class="profile__edit"
+              id="profile__edit"
+            ></button>
+            <p class="profile__description">Explorer</p>
+          </div>
+          <button type="button" class="profile__add-button"></button>
+        </section>
+        <section class="cards page__section">
+          <ul class="cards__list"></ul>
+        </section>
+      </main>
+      <footer class="footer page__section">
+        <p class="footer__copyright">&copy; Willie Sinclair 2024</p>
+      </footer>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div class="modal" id="profile-edit-modal">
+      <div class="modal__container">
+        <button class="modal__close"></button>
+        <p class="modal__heading">Edit Profile</p>
+        <form class="modal__form" id="profile-edit">
+          <label class="modal__label">
+            <input
+              class="modal__input modal__input_type_name"
+              id="profile-title-input"
+              name="name"
+              placeholder="Name"
+              type="text"
+              required
+              minlength="2"
+              maxlength="40"
+            />
+            <span class="modal__error" id="profile-title-input-error"></span>
+          </label>
+          <label class="modal__label">
+            <input
+              class="modal__input modal__input_type_description"
+              id="profile-description-input"
+              name="description"
+              placeholder="Description"
+              type="text"
+              required
+              minlength="2"
+              maxlength="200"
+            />
+            <span
+              class="modal__error"
+              id="profile-description-input-error"
+            ></span>
+          </label>
+          <button id="profile-save-btn" type="submit" class="modal__button">
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Add Card Modal -->
+    <div class="modal" id="add-card-modal">
+      <div class="modal__container">
+        <button class="modal__close"></button>
+        <p class="modal__heading">New Place</p>
+        <form class="modal__form" id="add-card-form">
+          <label class="modal__label">
+            <input
+              class="modal__input modal__input_type_title"
+              id="add-title-input"
+              name="title"
+              placeholder="Title"
+              type="text"
+              required
+              minlength="1"
+              maxlength="30"
+            />
+            <span class="modal__error" id="add-title-input-error"></span>
+          </label>
+          <label class="modal__label">
+            <input
+              class="modal__input modal__input_type_url"
+              id="add-url-input"
+              name="url"
+              placeholder="Image URL"
+              type="url"
+              required
+            />
+            <span class="modal__error" id="add-url-input-error"></span>
+          </label>
+          <button id="add-save-btn" type="submit" class="modal__button modal__button_disabled" disabled>
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Preview Image Modal -->
+    <div class="modal" id="preview-modal">
+      <div class="modal__container modal__container_type_preview">
+        <button class="modal__close modal__close_type_preview"></button>
+        <img class="modal__image" src="" alt="" />
+        <p class="modal__caption"></p>
+      </div>
+    </div>
+
+    <!-- Card Template -->
+    <template id="card-template">
+      <li class="card">
+        <img src="" alt="" class="card__image" />
+        <button type="button" class="card__trash" id="card-trash-btn"></button>
+        <div class="card__description">
+          <h2 class="card__title"></h2>
+          <button type="button" class="card__heart" id="card-like-btn"></button>
         </div>
-        <button class="profile__add-button" type="button"></button>
-      </section>
+      </li>
+    </template>
 
-
-
-
-      <section class="cards page__section">
-        <ul class="cards__list">
-          <li class="card">
-            <img src="./images/yosemite-valley.png" class="card__image" alt="yosemite-valley image" />
-            <div class="card__description">
-              <h2 class="card__title">Yosemite Valley</h2>
-              <button class="card__like-button" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img src="./images/lake-louise.png" class="card__image" alt="lake-louise image" />
-            <div class="card__description">
-              <h2 class="card__title">Lake Louise</h2>
-              <button class="card__like-button" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img src="./images/bald-mountains.png" class="card__image" alt="bald mountains" />
-            <div class="card__description">
-              <h2 class="card__title">Bald Mountains</h2>
-              <button class="card__like-button" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img src="./images/latemar.png" class="card__image" alt="latemar image" />
-            <div class="card__description">
-              <h2 class="card__title">Latemar</h2>
-              <button class="card__like-button" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img src="./images/vanoise-national-park.png" class="card__image" alt="vanoise-national-park" />
-            <div class="card__description">
-              <h2 class="card__title">Vanoise National Park</h2>
-              <button class="card__like-button" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img src="./images/lago-di-braies.png" class="card__image" alt="lago-di-braies" />
-            <div class="card__description">
-              <h2 class="card__title">Largo Di Braies</h2>
-              <button class="card__like-button" type="button"></button>
-            </div>
-          </li>
-        </ul>
-      </section>
-    </main>
-
-  </div>
-  <footer class="footer">
-    <p class="footer__copyright">&copy; 2024 Around the U.S</p>
-  </footer>
-</body>
+    <script src="./scripts/index.js"></script>
+    <script src="./scripts/validation.js"></script>
+  </body>
 </html>
