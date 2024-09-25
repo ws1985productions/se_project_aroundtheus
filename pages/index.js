@@ -78,13 +78,26 @@ function handleImageClick(data) {
 }
 
 // Function to render a card
-function renderCard(data) {
-    const card = new Card(data, cardSelector, handleImageClick);
-    cardListEl.prepend(card.getView());
+//function renderCard(data) {
+    //const card = new Card (data, cardSelector, handleImageClick);
+    //cardListEl.prepend(card.getView());
+//}//
+
+function createCard (data) {
+    const card = new Card (data, cardSelector, handleImageClick);
+    return card.getView();
 }
 
+function renderCard (data) {
+    const cardElement = createCard(data);
+    cardListEl.prepend(cardElement);
+}
+
+
+
+
 // Render initial cards
-initialCards.forEach(renderCard);
+initialCards.forEach(renderCard)
 
 /**************************************************************************
  *                               VALIDATION                               *
@@ -104,6 +117,8 @@ const cardFormValidator = new FormValidator(validationConfig, addCardForm);
 
 profileFormValidator.enableValidation();
 cardFormValidator.enableValidation();
+
+
 
 
 /**************************************************************************
