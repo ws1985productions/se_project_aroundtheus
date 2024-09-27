@@ -75,9 +75,9 @@ export default class FormValidator {
         this._setEventListeners();
         this._toggleButtonState(); // Initial state check
     }
-    disableButton() {
-        this._submitButton.classList.add(this._settings.inactiveButtonClass);
-        this._submitButton.disabled = true;
+    disableSubmitButton() {
+      this._submitButton.classList.add(this._inactiveButtonClass);
+      this._submitButton.disabled = true;
       }
     
 }
