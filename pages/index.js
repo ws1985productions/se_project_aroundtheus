@@ -170,7 +170,7 @@ function handleAddCardFormSubmit(e) {
     renderCard({name, link}, cardListEl);
     // added the reset code below to reset the image name and url
     e.target.reset();
-    cardFormValidator.disableButton();
+    cardFormValidator.disableSubmitButton();
     closeModal(addCardModal);
 }
 
